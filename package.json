@@ -1,6 +1,7 @@
 {
   "name": "coffee-shop-backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/JesseOtim/Coffee-shop-Backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2"
   }
 }
