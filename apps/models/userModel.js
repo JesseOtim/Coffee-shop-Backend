@@ -16,17 +16,6 @@ const userSchema = new Schema({
     lowercase: true,
   },
 
-  uniqueid: {
-    type: String,
-    trim: true,
-    lowercase: true,
-  },
-
-  dob: {
-    type: String,
-    trim: true,
-  },
-
   email: {
     type: String,
     lowercase: true,
@@ -44,31 +33,7 @@ const userSchema = new Schema({
     type: String,
   },
 
-  phonenumber: {
-    type: String,
-    trim: true,
-  },
-
-  nin: {
-    type: String,
-    trim: true,
-  },
-
   role: {
-    type: String,
-    default: "user",
-    lowercase: true,
-    trim: true,
-  },
-
-  address: {
-    type: String,
-    default: "user",
-    lowercase: true,
-    trim: true,
-  },
-
-  ward: {
     type: String,
     default: "user",
     lowercase: true,
