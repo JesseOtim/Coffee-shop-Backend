@@ -2,8 +2,9 @@ import '@babel/polyfill';
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import router from './app/routes/routes';
+import router from './app/routes/routes.js';
 import cors from 'cors';
+import connection from './app/connection.js';
 
 
 dotenv.config();
