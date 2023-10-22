@@ -45,21 +45,38 @@ class AuthController {
     try {
       var user = await UserModel.findOne({ email: req.body.email }).exec();
 
+      // if (!user) {
+      //   return res.status(400).send({
+      //     status: 400,
+      //     message: "The email does not exist",
+      //     error,
+      //   });
+      // }
+      // if (!(await bcrypt.compare(req.body.password, user.password))) {
+      //   return res.status(401).send({
+      //     status: 401,
+      //     message: "The password is incorrect",
+      //   });
+      // }
+
       if (!user) {
         return res.status(400).send({
           status: 400,
           message: "The email does not exist",
-          error,
         });
       }
+      
       if (!(await bcrypt.compare(req.body.password, user.password))) {
         return res.status(401).send({
           status: 401,
           message: "The password is incorrect",
         });
       }
+      
+      // req.body.role = user.role;
 
-      req.body.role = user.role;
+      const userRole = user.role;
+
 
       const token = await createToken(req.body);
       // console.log('>>>>>>>>>',token);
